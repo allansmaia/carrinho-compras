@@ -2,7 +2,11 @@
 
 function validarProduto(nome, preco, estoque) {
     if (!nome || nome.trim().length < 3) {
+<<<<<<< HEAD
         return { valido: false, mensagem: "Nome do produto deve conter pelo menos 3 caracteres." };
+=======
+        return { valido false, mensagem: "Nome do produto deve conter pelo menos 3 caracteres." };
+>>>>>>> feature/validacao
     }
     if (!preco || preco <= 0) {
         return { valido: false, mensagem: "Preco do produto deve ser um valor positivo." };
@@ -10,7 +14,11 @@ function validarProduto(nome, preco, estoque) {
     if (!estoque || estoque < 0) {
         return { valido: false, mensagem: "Estoque do produto deve ser um valor nao negativo." };
     }
+<<<<<<< HEAD
     return { valido: true, mensagem: "Produto vlido." };
+=======
+    return { valido: true, mensagem: "Produto valido." };
+>>>>>>> feature/validacao
 }
 
 function validarQuantidade(quantidade, estoqueDisponivel) {
