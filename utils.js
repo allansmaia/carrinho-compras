@@ -46,4 +46,26 @@ function calcularFrete(total) {
     }
 }
 
-module.exports = { gerarIdProduto, gerarIdPedido, formatarPreco, calcularTotal, aplicarDesconto, exibirCarrinho, calcularFrete };
+function calcularDescontoProgressivo(carrinho) {
+    const totalItens = carrinho.reduce((total, item) => total + item.quantidade, 0);
+    if (totalItens >= 10) {
+        return 15;
+    } else if (totalItens >= 5) {
+        return 10;
+    } else if (totalItens >= 3) {
+        return 5;
+    }
+    return 0;
+}
+
+
+module.exports = {
+    gerarIdProduto,
+    gerarIdPedido,
+    formatarPreco,
+    calcularTotal,
+    aplicarDesconto,
+    exibirCarrinho,
+    calcularDescontoProgressivo,
+    calcularFrete
+};
