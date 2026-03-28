@@ -12,7 +12,7 @@ function validarProduto(nome, preco, estoque) {
     return { valido: true, mensagem: "Produto valido." };
 }
 function validarQuantidade(quantidade, estoqueDisponivel) {
-    if (!quantidade || quantidade <= 0) {
+    if (quantidade === undefined || quantidade === null || quantidade <= 0) {
         return { valido: false, mensagem: "Quantidade deve ser um valor positivo." };
     }
     if (quantidade > estoqueDisponivel) {
