@@ -25,3 +25,6 @@ node index.js
 - Finalizar pedidos com atualização de estoque
 - Visualizar histórico de pedidos
 - Validação completa de dados
+- Calculo de frete
+- Desconto progressivo por quantidade
+- Mensagens de erro melhoradas
