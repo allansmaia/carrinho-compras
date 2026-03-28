@@ -36,6 +36,40 @@ function exibirCarrinho(carrinho) {
     console.log("================");
 }
 
+function calcularFrete(total) {
+    if (total >= 500) {
+        return 0; // Frete grátis para pedidos acima de R$ 500
+    } else if (total >= 200) {
+        return 20; // Frete de R$ 20 para pedidos entre R$ 200 e R$ 499.99
+    } else {
+        return 40.00; // Frete de R$ 40 para pedidos abaixo de R$ 200
+    }
+}
+
+function calcularDescontoProgressivo(carrinho) {
+    const totalItens = carrinho.reduce((total, item) => total + item.quantidade, 0);
+    if (totalItens >= 10) {
+        return 15;
+    } else if (totalItens >= 5) {
+        return 10;
+    } else if (totalItens >= 3) {
+        return 5;
+    }
+    return 0;
+}
+
+
+module.exports = {
+    gerarIdProduto,
+    gerarIdPedido,
+    formatarPreco,
+    calcularTotal,
+    aplicarDesconto,
+    exibirCarrinho,
+    calcularDescontoProgressivo,
+    calcularFrete
+};
+
 function calcularDescontoProgressivo(carrinho) {
     const totalItens = carrinho.reduce((total, item) => total + item.quantidade, 0);
 
