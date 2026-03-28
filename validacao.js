@@ -23,7 +23,7 @@ function validarQuantidade(quantidade, estoqueDisponivel) {
 function validarCupom(codigo, cupons) {
     const cupom = cupons.find(c => c.codigo === codigo);
     if (!cupom) {
-        return { valido: false, mensagem: "Codigo de cupom invalido." };
+        return { valido: false, mensagem: "Cupom '" + codigo + "' nao encontrado. Verifique o codigo do cupom e tente novamente." };
     }
     return { valido: true, cupom: cupom };
 }
