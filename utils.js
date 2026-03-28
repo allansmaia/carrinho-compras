@@ -36,4 +36,14 @@ function exibirCarrinho(carrinho) {
     console.log("================");
 }
 
-module.exports = { gerarIdProduto, gerarIdPedido, formatarPreco, calcularTotal, aplicarDesconto, exibirCarrinho };
+function calcularFrete(total) {
+    if (total >= 500) {
+        return 0; // Frete grátis para pedidos acima de R$ 500
+    } else if (total >= 200) {
+        return 20; // Frete de R$ 20 para pedidos entre R$ 200 e R$ 499.99
+    } else {
+        return 40.00; // Frete de R$ 40 para pedidos abaixo de R$ 200
+    }
+}
+
+module.exports = { gerarIdProduto, gerarIdPedido, formatarPreco, calcularTotal, aplicarDesconto, exibirCarrinho, calcularFrete };
