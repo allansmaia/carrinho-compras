@@ -36,4 +36,16 @@ function exibirCarrinho(carrinho) {
     console.log("================");
 }
 
-module.exports = { gerarIdProduto, gerarIdPedido, formatarPreco, calcularTotal, aplicarDesconto, exibirCarrinho };
+function calcularDescontoProgressivo(carrinho) {
+    const totalItens = carrinho.reduce((total, item) => total + item.quantidade, 0);
+
+    if (totalItens >= 10) {
+        return 15; // 15% de desconto
+    } else if (totalItens >= 5) {
+        return 10; // 10% de desconto
+    } else if (totalItens >= 3) {
+        return 5;  // 5% de desconto
+    }
+    return 0; // sem desconto
+}
+module.exports = { gerarIdProduto, gerarIdPedido, formatarPreco, calcularTotal, aplicarDesconto, exibirCarrinho, calcularDescontoProgressivo };
